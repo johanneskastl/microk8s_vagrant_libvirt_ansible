@@ -28,3 +28,6 @@
 [submodule "ansible/roles/b1-systems-ansible-role-suseconnect"]
 	path = ansible/roles/b1-systems-ansible-role-suseconnect
 	url = https://github.com/b1-systems/ansible-role-suseconnect.git
+[submodule "ansible/roles/johanneskastl.update_debian_ubuntu_sources"]
+	path = ansible/roles/johanneskastl.update_debian_ubuntu_sources
+	url = https://github.com/johanneskastl/ansible-role-update_debian_ubuntu_sources.git
