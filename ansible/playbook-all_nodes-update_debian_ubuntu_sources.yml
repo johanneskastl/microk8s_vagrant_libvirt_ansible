@@ -1,0 +1,8 @@
+---
+- name: 'Update the apt sources on Debian/Ubuntu'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+
+  roles:
+    - role: 'johanneskastl.update_debian_ubuntu_sources'
