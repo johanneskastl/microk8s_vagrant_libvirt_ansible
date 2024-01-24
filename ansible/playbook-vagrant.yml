@@ -14,3 +14,6 @@
 
 - name: 'Run playbook-all_nodes-minimal_bashrc.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-minimal_bashrc.yml
+
+- name: 'Run playbook-all_nodes-install_microk8s_snap.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-install_microk8s_snap.yml
