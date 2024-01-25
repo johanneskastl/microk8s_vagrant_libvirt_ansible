@@ -4,55 +4,5 @@
   gather_facts: true
   become: true
 
-  tasks:
-
-    - name: 'Install snap package'
-      ansible.builtin.apt:
-        name: snap
-        update_cache: true
-
-    - name: 'Install microk8s'
-      community.general.snap:
-        name: microk8s
-        classic: true
-      register: microk8s_installation
-      until: 'not microk8s_installation.failed | bool'
-      retries: 19
-      delay: 30
-
-    - name: 'Add vagrant user to microk8s group'
-      ansible.builtin.user:
-        name: 'vagrant'
-        groups:
-          - 'microk8s'
-        append: true
-
-    #
-    # microk8s addons
-    #
-
-    - name: 'Check microk8s hostpath-storage status'
-      ansible.builtin.command:
-        cmd: 'microk8s status -a hostpath-storage'
-      changed_when: false
-      failed_when: false
-      register: microk8s_hostpath_storage_status
-
-    - name: 'Enable microk8s hostpath-storage addon'
-      ansible.builtin.command:
-        cmd: 'microk8s enable hostpath-storage'
-      when:
-        - not microk8s_hostpath_storage_status.stdout == "enabled"
-
-    - name: 'Check microk8s ingress status'
-      ansible.builtin.command:
-        cmd: 'microk8s status -a ingress'
-      changed_when: false
-      failed_when: false
-      register: microk8s_ingress_status
-
-    - name: 'Enable microk8s ingress addon'
-      ansible.builtin.command:
-        cmd: 'microk8s enable ingress'
-      when:
-        - not microk8s_ingress_status.stdout == "enabled"
+  roles:
+    - name: 'johanneskastl.install_microk8s_snap'
