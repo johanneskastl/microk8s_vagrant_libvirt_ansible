@@ -6,10 +6,19 @@
 
   tasks:
 
+    - name: 'Install snap package'
+      ansible.builtin.apt:
+        name: snap
+        update_cache: true
+
     - name: 'Install microk8s'
       community.general.snap:
         name: microk8s
         classic: true
+      register: microk8s_installation
+      until: 'not microk8s_installation.failed | bool'
+      retries: 19
+      delay: 30
 
     - name: 'Add vagrant user to microk8s group'
       ansible.builtin.user:
