@@ -1,0 +1,14 @@
+---
+- name: 'Install microk8s via snap'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+
+  tasks:
+
+    - name: 'Add vagrant user to microk8s group'
+      ansible.builtin.user:
+        name: 'vagrant'
+        groups:
+          - 'microk8s'
+        append: true
