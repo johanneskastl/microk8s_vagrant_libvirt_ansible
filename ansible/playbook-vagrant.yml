@@ -18,5 +18,8 @@
 - name: 'Run playbook-all_nodes-install_microk8s_snap.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-install_microk8s_snap.yml
 
+- name: 'Run playbook-all_nodes-add_vagrant_user_to_microk8s_group.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-add_vagrant_user_to_microk8s_group.yml
+
 - name: 'Run playbook-all_nodes-fetch_and_modify_kubeconfig.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-fetch_and_modify_kubeconfig.yml
