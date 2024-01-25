@@ -31,3 +31,6 @@
 [submodule "ansible/roles/johanneskastl.update_debian_ubuntu_sources"]
 	path = ansible/roles/johanneskastl.update_debian_ubuntu_sources
 	url = https://github.com/johanneskastl/ansible-role-update_debian_ubuntu_sources.git
+[submodule "ansible/roles/johanneskastl.install_microk8s_snap"]
+	path = ansible/roles/johanneskastl.install_microk8s_snap
+	url = https://github.com/johanneskastl/ansible-role-install_microk8s_snap.git
