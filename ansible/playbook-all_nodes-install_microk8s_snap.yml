@@ -27,6 +27,18 @@
           - 'microk8s'
         append: true
 
+    - name: 'Check microk8s hostpath-storage status'
+      ansible.builtin.command:
+        cmd: 'microk8s status -a hostpath-storage'
+      changed_when: false
+      failed_when: false
+      register: microk8s_hostpath_storage_status
+
+    - name: 'Enable microk8s hostpath-storage addon'
+      ansible.builtin.command:
+        cmd: 'microk8s enable hostpath-storage'
+      when:
+        - not microk8s_hostpath_storage_status.stdout == "enabled"
     #
     # kubeconfig
     #
