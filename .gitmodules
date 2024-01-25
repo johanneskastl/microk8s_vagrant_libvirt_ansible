@@ -34,3 +34,6 @@
 [submodule "ansible/roles/johanneskastl.install_microk8s_snap"]
 	path = ansible/roles/johanneskastl.install_microk8s_snap
 	url = https://github.com/johanneskastl/ansible-role-install_microk8s_snap.git
+[submodule "ansible/roles/johanneskastl.fetch_and_modify_a_kubeconfig_file"]
+	path = ansible/roles/johanneskastl.fetch_and_modify_a_kubeconfig_file
+	url = https://github.com/johanneskastl/ansible-role-fetch_and_modify_a_kubeconfig_file.git
