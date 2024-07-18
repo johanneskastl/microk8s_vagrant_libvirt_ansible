@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "microk8s" do |node|
 
     # which image to use
-    node.vm.box = "generic/ubuntu2204"
+    node.vm.box = "generic/ubuntu2310"
 
     # sizing of the VMs
     node.vm.provider "libvirt" do |lv|
