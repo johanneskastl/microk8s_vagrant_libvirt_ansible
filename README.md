@@ -1,6 +1,6 @@
 # microk8s_vagrant_libvirt_ansible
 
-This setup creates a VM with Ubuntu 22.04 and installs microk8s.
+This setup creates a VM with Ubuntu 23.10 and installs microk8s.
 
 It enables the ingress and hostpath-storage addons in microk8s and adds the
 vagrant user on the VM to the `microk8s` group.
@@ -9,8 +9,11 @@ After the installation it fetches the `kubeconfig` file from the VM and saves it
 as `microk8s-kubeconfig` in the `ansible` directory. It modifies the file so it
 does no longer contain `127.0.0.1` but rather the VM's actual IP address.
 
-Default OS is Ubuntu 22.04. Although that can be changed in the
+Default OS is Ubuntu 23.10. Although that can be changed in the
 Vagrantfile, please beware that this will break the Ansible provisioning.
+
+There is a branch called `Ubuntu_22.04` that uses Ubuntu 22.04 as base operating
+system.
 
 ## Vagrant
 
